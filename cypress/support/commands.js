@@ -1,8 +1,18 @@
-Cypress.Commands.add('login', (email, password) => {       
+Cypress.Commands.add('login', (email, senha) => {       
     cy.get('[data-test="input-loginEmail"]').type(email); 
-    cy.get('[data-test="input-loginPassword"]').type(password); 
+    cy.get('[data-test="input-loginPassword"]').type(senha); 
     cy.get('[data-test="submit-button"]').click();
 })
+
+Cypress.Commands.add("cadastrar", (nome, email, senha) =>{
+    cy.get('[data-test="input-name"]').type(nome); //enconta o input nome e digita o nome
+    cy.get('[data-test="input-email"]').type(email); //enconta o input email e digita o email
+    cy.get('[data-test="input-password"]').type(senha); //encontra o input senha e digita a senha
+    cy.get('[data-test="input-confirm-password"]').type(senha); //encontra o input confirmar senha e digita a confirmação de senha
+    cy.get('[data-test="submit-button"]').click(); //encontra o btn de cadastrar e clica 
+}
+
+)
 
 // ***********************************************
 // This example commands.js shows you how to
